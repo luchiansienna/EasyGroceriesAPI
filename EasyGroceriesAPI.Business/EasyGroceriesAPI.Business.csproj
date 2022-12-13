@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EasyGroceriesAPI.Domain\EasyGroceriesAPI.Domain.csproj" />
+    <ProjectReference Include="..\EasyGroceriesAPI.DTO\EasyGroceriesAPI.DTO.csproj" />
+    <ProjectReference Include="..\EasyGroceriesAPI.DataAccess\EasyGroceriesAPI.DataAccess.csproj" />
+    <ProjectReference Include="..\EasyGroceriesAPI.Business.Validation\EasyGroceriesAPI.Business.Validation.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="DiscountProvider\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DiscountProvider\" />
+  </ItemGroup>
+</Project>

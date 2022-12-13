@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
+    <PackageReference Include="coverlet.collector" Version="3.1.0" />
+    <PackageReference Include="Moq" Version="4.18.3" />
+    <PackageReference Include="NUnit.Console" Version="3.16.0" />
+    <PackageReference Include="Moq.EntityFrameworkCore" Version="7.0.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EasyGroceriesAPI.Business\EasyGroceriesAPI.Business.csproj" />
+    <ProjectReference Include="..\EasyGroceriesAPI.Domain\EasyGroceriesAPI.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Moq" />
+    <None Remove="NUnit.Console" />
+    <None Remove="MockData\" />
+    <None Remove="EntityFrameworkCoreMock.Moq" />
+    <None Remove="Moq.EntityFrameworkCore" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MockData\" />
+  </ItemGroup>
+</Project>
