@@ -25,8 +25,8 @@ public class ValidatorOrderProcessor : IValidatorOrderProcessor
         }
         var loyaltyMembershipItems = order.Items.Where(item => item.IsLoyaltyMembershipItem);
         if (loyaltyMembershipItems.Count() > 1) throw new Exception("Order cannot have more than 1 Loyalty Membership Item. Currently it has " + loyaltyMembershipItems);
-        var quantityLM = loyaltyMembershipItems.FirstOrDefault().Quantity;
-        if (quantityLM != 1 && quantityLM != 0)
+        var quantityLM = loyaltyMembershipItems.FirstOrDefault();
+        if (quantityLM != null && quantityLM.Quantity != 1 && quantityLM.Quantity != 0)
             throw new Exception("Quantity of Loyalty Membership can only be 0 or 1");
 
 
