@@ -129,8 +129,8 @@ public class OrderProcessorTests
 
         var entityEntry = new Mock<EntityEntry<Order>>(internalEntityEntry);
 
-        _context.Setup(mock => mock.Entry(MockedOrders.SimpleOrderWithItems)).Returns(entityEntry.Object); // new Mock<Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<Order>>(mockInternalEntry.Object).Object);
-
+        _context.Setup(mock => mock.Entry(MockedOrders.SimpleOrderWithItems)).Returns(entityEntry.Object); 
+        
         var result = _orderProcessor.AddOrder(MockedOrders.SimpleOrderWithItems).Result;
         _orderRepository.Verify(mock => mock.Insert(MockedOrders.SimpleOrderWithItems), Times.Once);
 
